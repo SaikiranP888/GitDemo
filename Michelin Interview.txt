@@ -1,0 +1,87 @@
+SQL Questions:
+1. From two table EMployee  and Dept get the values which are not present in Employee Table.
+2. From below table get the output from all 4 joins
+
+Table A = 1 0 1 1
+Table B = 1 1 0 0 
+
+
+
+Python Selenium Questions:
+
+3. Difference between implicit and explicit wait.
+4. Automation testing appproach for username and password and how the details will be stored.
+5. Multiply two lists to get one list :
+ ABC = [1, 2, 3, 4]
+XYZ = [7, 8, 9, 10]
+6. To get the vlaue of 1,2 entry from list.
+7. How to handle pop up when we are using selenium.
+
+
+
+Answers Given by me:
+
+1. EMployee = empID , Name
+
+DEpt = empID , DName
+
+select Name , empID from Employee E NOT IN (select empID , DName from Dept);
+
+select empID , Name from EMployee  right join DEpt  on EMployee.empID  = DEpt.empID ;
+
+2. Inner Join = 1 , 0
+ Left Join = 1,0,1,1
+Right join = 1,0
+Cross Join = n*n
+
+3. Implicit wait is globally defined where explicit wait is specifically defined for one element.
+4. Either on run time the details will be asked to the user to enter else if its hardcoded we will give the prerequisite details in the code.
+5. Result = (ABC) * (XYZ)
+6. ABC[0,2]
+7. Just gave the switch.to but didin't mention it properly said switch_to.window
+
+
+Correct Answers:
+1. SELECT Dept.*
+FROM Dept
+LEFT JOIN Employee ON Dept.DeptID = Employee.DeptID
+WHERE Employee.DeptID IS NULL;
+
+2. 
+i.Inner Join Output = {1, 0, 1, 1} ∩ {1, 1, 0, 0} = {1, 0, 1, 0}
+ii. Left Join Output = Table A + (Matching values from Table B)
+
+For the given tables, the left join output would be:
+1 0 1 1 1 1 0 0
+
+iii. Right Join:
+Right Join Output = (Matching values from Table A) + Table B
+
+For the given tables, the right join output would be:
+1 1 0 0 1 0 1 1
+
+iv. Outer Join:
+
+Outer Join Output = Table A ∪ Table B
+
+For the given tables, the outer join output would be:
+1 0 1 1 1 1 0 0
+
+3.
+
+4.
+
+5.
+ABC = [1, 2, 3, 4]
+XYZ = [7, 8, 9, 10]
+
+result = [x * y for x, y in zip(ABC, XYZ)]
+print(result)
+
+6. print(ABC[0:3])
+
+
+
+
+
+
